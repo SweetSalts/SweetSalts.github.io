@@ -20,7 +20,7 @@
             <div id="wrap">
                <div id="text">
                     <div id="code">                 
-                    <span class="say">宝宝～</span><br>
+                    <span class="say">雅雅～</span><br>
                     <span class="say">自从遇见你之后我每天都很快乐</span><br>
                     <span class="say">期待每天和你见面</span><br>
                     <span class="say">每次见面后都不想和你分开</span><br>
@@ -128,23 +128,23 @@
         var seedAnimate = eval(Jscex.compile("async", function () {
             seed.draw();
             while (hold) {
-                $await(Jscex.Async.sleep(10));
+                $await(Jscex.Async.sleep(5));
             }
             while (seed.canScale()) {
                 seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
+                $await(Jscex.Async.sleep(5));
             }
             while (seed.canMove()) {
                 seed.move(0, 2);
                 foot.draw();
-                $await(Jscex.Async.sleep(10));
+                $await(Jscex.Async.sleep(5));
             }
         }));
 
         var growAnimate = eval(Jscex.compile("async", function () {
             do {
                 tree.grow();
-                $await(Jscex.Async.sleep(10));
+                $await(Jscex.Async.sleep(5));
             } while (tree.canGrow());
         }));
 
@@ -159,7 +159,7 @@
             tree.snapshot("p1", 240, 0, 610, 680);
             while (tree.move("p1", 500, 0)) {
                 foot.draw();
-                $await(Jscex.Async.sleep(10));
+                $await(Jscex.Async.sleep(5));
             }
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
@@ -167,7 +167,7 @@
             // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
+            $await(Jscex.Async.sleep(150));
             canvas.css("background", "none");
         }));
 
@@ -177,7 +177,7 @@
                 tree.ctx.clearRect(0, 0, width, height);
                 tree.jump();
                 foot.draw();
-                $await(Jscex.Async.sleep(25));
+                $await(Jscex.Async.sleep(15));
             }
         }));
 
